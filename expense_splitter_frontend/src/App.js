@@ -7,6 +7,7 @@ import GroupDetailPage from './pages/GroupDetailPage';
 import ExpensesPage from './pages/ExpensesPage';
 import FriendsPage from './pages/FriendsPage';
 import ReceiptsPage from './pages/ReceiptsPage';
+import BalancesPage from './pages/BalancesPage';
 import NotFound from './pages/NotFound';
 
 // PUBLIC_INTERFACE
@@ -46,6 +47,7 @@ function App() {
           <Route path="/expenses" element={<ExpensesPage />} />
           <Route path="/friends" element={<FriendsPage />} />
           <Route path="/receipts" element={<ReceiptsPage />} />
+          <Route path="/balances" element={<BalancesPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
 

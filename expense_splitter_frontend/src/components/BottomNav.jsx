@@ -21,6 +21,10 @@ export default function BottomNav() {
         <span role="img" aria-hidden="true">💳</span>
         <span>Expenses</span>
       </NavLink>
+      <NavLink to="/balances" className={linkClass} aria-label="Balances">
+        <span role="img" aria-hidden="true">⚖️</span>
+        <span>Balances</span>
+      </NavLink>
       <NavLink to="/friends" className={linkClass} aria-label="Friends">
         <span role="img" aria-hidden="true">🤝</span>
         <span>Friends</span>
