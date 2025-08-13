@@ -3,6 +3,7 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import './App.css';
 import BottomNav from './components/BottomNav';
 import GroupsPage from './pages/GroupsPage';
+import GroupDetailPage from './pages/GroupDetailPage';
 import ExpensesPage from './pages/ExpensesPage';
 import FriendsPage from './pages/FriendsPage';
 import ReceiptsPage from './pages/ReceiptsPage';
@@ -41,6 +42,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Navigate to="/groups" replace />} />
           <Route path="/groups" element={<GroupsPage />} />
+          <Route path="/groups/:groupId" element={<GroupDetailPage />} />
           <Route path="/expenses" element={<ExpensesPage />} />
           <Route path="/friends" element={<FriendsPage />} />
           <Route path="/receipts" element={<ReceiptsPage />} />
