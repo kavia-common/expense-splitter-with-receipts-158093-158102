@@ -1,4 +1,4 @@
-/* CSS Variables for Theme Management */
+ /* CSS Variables for Theme Management */
 :root {
   /* Light theme colors */
   --bg-primary: #ffffff;
@@ -8,6 +8,13 @@
   --border-color: #e9ecef;
   --button-bg: #007bff;
   --button-text: #ffffff;
+
+  /* Accent colors */
+  --danger: #d9534f;
+  --secondary: #6c757d;
+
+  /* Focus outline */
+  --focus-color: #80bdff;
 }
 
 [data-theme="dark"] {
@@ -19,6 +26,8 @@
   --border-color: #404040;
   --button-bg: #0056b3;
   --button-text: #ffffff;
+
+  --focus-color: #4c9eff;
 }
 
 .App {
@@ -49,6 +58,21 @@
   text-align: left;
 }
 
+/* Typography */
+.section h1 {
+  font-size: 22px;
+  line-height: 1.25;
+  margin: 0 0 12px 0;
+  font-weight: 800;
+}
+
+.section h2 {
+  font-size: 18px;
+  line-height: 1.3;
+  margin: 16px 0 8px 0;
+  font-weight: 700;
+}
+
 /* Simple Card */
 .card {
   background: var(--bg-secondary);
@@ -71,16 +95,21 @@
   cursor: pointer;
   text-decoration: none;
   font-weight: 600;
-  transition: background 0.2s ease, opacity 0.2s ease, transform 0.05s ease;
+  transition: background 0.2s ease, opacity 0.2s ease, transform 0.05s ease, box-shadow 0.2s ease;
   margin-right: 8px;
 }
 
 .btn:hover {
-  opacity: 0.9;
+  opacity: 0.92;
 }
 
 .btn:active {
   transform: translateY(1px);
+}
+
+.btn:focus-visible {
+  outline: 3px solid var(--focus-color);
+  outline-offset: 2px;
 }
 
 .btn-primary {
@@ -89,14 +118,18 @@
   border-color: transparent;
 }
 
+.btn-primary:hover {
+  filter: brightness(1.05);
+}
+
 .btn-danger {
-  background: #d9534f;
+  background: var(--danger);
   color: #fff;
   border-color: transparent;
 }
 
 .btn-secondary {
-  background: #6c757d;
+  background: var(--secondary);
   color: #fff;
   border-color: transparent;
 }
@@ -118,6 +151,14 @@
   color: var(--text-primary);
   margin-bottom: 12px;
   box-sizing: border-box;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input:focus-visible,
+.select:focus-visible {
+  outline: none;
+  border-color: var(--focus-color);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--focus-color) 30%, transparent);
 }
 
 .label {
@@ -203,6 +244,11 @@
   background: rgba(0, 0, 0, 0.04);
 }
 
+.bottom-nav__link:focus-visible {
+  outline: 3px solid var(--focus-color);
+  outline-offset: 2px;
+}
+
 [data-theme="dark"] .bottom-nav__link:hover {
   background: rgba(255, 255, 255, 0.06);
 }
@@ -210,6 +256,7 @@
 .bottom-nav__link.active {
   opacity: 1;
   color: var(--text-secondary);
+  font-weight: 700;
 }
 
 .App-link {
@@ -241,6 +288,11 @@
 
 .theme-toggle:active {
   transform: translateY(0);
+}
+
+.theme-toggle:focus-visible {
+  outline: 3px solid var(--focus-color);
+  outline-offset: 2px;
 }
 
 /* Responsive design for mobile */
