@@ -88,6 +88,18 @@ export function uploadReceipt(expenseId, file, options = {}) {
   return request(`/expenses/${expenseId}/receipt`, { method: 'POST', body: form, ...options });
 }
 
+// PUBLIC_INTERFACE
+export function deleteReceipt(expenseId, options = {}) {
+  /** Delete the receipt for the given expense ID. */
+  return request(`/expenses/${expenseId}/receipt`, { method: 'DELETE', ...options });
+}
+
+// PUBLIC_INTERFACE
+export function getReceiptUrl(expenseId) {
+  /** Build the absolute URL for viewing/downloading a receipt for the given expense ID. */
+  return `${getApiBaseUrl()}/expenses/${expenseId}/receipt`;
+}
+
 export default {
   getApiBaseUrl,
   get,
@@ -95,4 +107,6 @@ export default {
   patch,
   del,
   uploadReceipt,
+  deleteReceipt,
+  getReceiptUrl,
 };
