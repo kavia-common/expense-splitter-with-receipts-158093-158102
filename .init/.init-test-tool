@@ -1,0 +1,4 @@
+{
+    "command": "npm run test",
+    "working_directory": "/home/kavia/workspace/code-generation/expense-splitter-with-receipts-158093-158102/expense_splitter_frontend"
+}
